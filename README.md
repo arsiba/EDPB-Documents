@@ -3,8 +3,6 @@
 ## Overview
 This repository serves as a supplementary resource for the **GDPR/EDPB Legal Assistant** project, which is hosted on Hugging Face. The AI assistant is designed to support privacy professionals, legal experts, and Data Protection Officers (DPOs) in navigating the complexities of European data protection regulations, particularly the General Data Protection Regulation (GDPR) and the guidelines set forth by the European Data Protection Board (EDPB).
 
-You can access the main project here: [GDPR/EDPB Legal Assistant on Hugging Face](https://huggingface.co/spaces/arsiba/GDPR-EDPB-AI).
-
 The assistant utilizes a Retrieval-Augmented Generation (RAG) approach, combining document retrieval with generative answering to provide context-aware responses. It is trained on a comprehensive archive of EDPB documents, enabling users to quickly find relevant legal guidance without manually sifting through thousands of PDF files.
 
 ## Repository Contents
