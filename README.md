@@ -1,17 +1,29 @@
-# GDPR/EDPB Legal Assistant - Additional Resources README
+# EDPB Document Repository
 
 ## Overview
-This repository serves as a supplementary resource for the **GDPR/EDPB Legal Assistant** project, which is hosted on Hugging Face. The AI assistant is designed to support privacy professionals, legal experts, and Data Protection Officers (DPOs) in navigating the complexities of European data protection regulations, particularly the General Data Protection Regulation (GDPR) and the guidelines set forth by the European Data Protection Board (EDPB).
 
-The assistant utilizes a Retrieval-Augmented Generation (RAG) approach, combining document retrieval with generative answering to provide context-aware responses. It is trained on a comprehensive archive of EDPB documents, enabling users to quickly find relevant legal guidance without manually sifting through thousands of PDF files.
+This repository provides a **collection of scripts and PDF documents from the European Data Protection Board (EDPB)**. Its purpose is to serve as a **source for automated scraping and as an upload repository** for EDPB documents.
+
+The actual automation for retrieving the documents runs externally. This repository allows anyone to **reuse the scripts** or access the latest PDF collection in a centralized location.
 
 ## Repository Contents
-- **PDF Documents:** A complete archive of over 1,600 EDPB documents, including guidelines, decisions, and other relevant materials.
-- **Scraping Scripts:** Automated scripts for downloading EDPB documents from official sources.
-- **Preprocessing Scripts:** Tools for converting raw PDF documents into a format suitable for embedding and indexing.
+
+* **PDF Documents:** A curated archive of EDPB guidelines, opinions, recommendations, and final decisions.
+* **Scraping Scripts:** Scripts that can be used to download EDPB documents from official sources. These scripts are intended for users who want to run their own automated retrieval.
+
+## Purpose
+
+* Provide **ready-to-use scripts** for automated EDPB document retrieval.
+* Offer a **central upload source** for collected PDF documents.
+* Make EDPB materials more **accessible and reusable** for legal research and compliance purposes.
+
+## Sources
+
+All documents are sourced from the European Data Protection Board (EDPB). For original documents, visit:
+
+* [EDPB Documents](https://www.edpb.europa.eu/our-work-tools/documents/our-documents_en)
+* [Article 60 Final Decisions](https://www.edpb.europa.eu/our-work-tools/consistency-findings/register-for-article-60-final-decisions_en)
 
 ## Disclaimer
-The PDF documents included in this repository are sourced from the European Data Protection Board (EDPB). For more information and access to the original documents, please visit the following links:
-- [EDPB Documents](https://www.edpb.europa.eu/our-work-tools/documents/our-documents_en)
-- [Article 60 Final Decisions](https://www.edpb.europa.eu/our-work-tools/consistency-findings/register-for-article-60-final-decisions_en)
 
+This repository is **not an official EDPB product**. Documents are sourced from the EDPB, and while efforts are made to keep the collection complete, users should always refer to the **official EDPB website** for authoritative versions.
