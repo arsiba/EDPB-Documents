@@ -19,8 +19,7 @@ URLS = [
     }
 ]
 
-BASE_DOWNLOAD_DIR = "edpb_documents"
-INDEX_FILE = os.path.join(BASE_DOWNLOAD_DIR, "index.json")
+INDEX_FILE = "index.json"
 
 HEADERS = {
     "User-Agent": (
@@ -34,24 +33,19 @@ HEADERS = {
     "Connection": "keep-alive",
 }
 
-# --- Verzeichnisse erstellen ---
-if not os.path.exists(BASE_DOWNLOAD_DIR):
-    os.makedirs(BASE_DOWNLOAD_DIR)
 for u in URLS:
-    folder_path = os.path.join(BASE_DOWNLOAD_DIR, u["folder"])
+    folder_path = u["folder"]
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
-# --- INDEX VOM DATEISYSTEM AUFBAUEN ---
 downloaded_index = {}
 for u in URLS:
-    folder_path = os.path.join(BASE_DOWNLOAD_DIR, u["folder"])
+    folder_path = u["folder"]
     for filename in os.listdir(folder_path):
         filepath = os.path.join(folder_path, filename)
         if os.path.isfile(filepath):
             downloaded_index[filename] = {"url": None, "folder": u["folder"]}
 
-# Index in Datei sichern
 with open(INDEX_FILE, "w", encoding="utf-8") as f:
     json.dump(downloaded_index, f, ensure_ascii=False, indent=2)
 
@@ -61,12 +55,13 @@ def save_index():
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         json.dump(downloaded_index, f, ensure_ascii=False, indent=2)
 
-# --- Datei herunterladen nur wenn nötig ---
 def download_file(session, url, filename, folder):
     if filename in downloaded_index:
         return False
 
-    filepath = os.path.join(BASE_DOWNLOAD_DIR, folder, filename)
+    filepath = os.path.join(folder, filename)
+    print("Sleeping in between downloads")
+    time.sleep(random.uniform(3, 10))
     try:
         response = session.get(url, stream=True, timeout=30)
         response.raise_for_status()
@@ -81,7 +76,6 @@ def download_file(session, url, filename, folder):
         print(f"Fehler beim Herunterladen von {url}: {e}")
         return False
 
-# --- Scraper ---
 def scrape_documents(base_url, session, folder):
     documents = []
     page_number = 0
@@ -159,14 +153,12 @@ def scrape_documents(base_url, session, folder):
 
         if page_number == 0 and new_downloads_on_page == 0:
             print("Keine neuen Dateien auf der ersten Seite. Beende diese URL.")
-            break  # Seite 0 ist leer => sofort abbrechen
-
+            break
         page_number += 1
-        time.sleep(random.uniform(3, 7))
+        time.sleep(random.uniform(3, 10))
 
     return documents
 
-# --- MAIN ---
 if __name__ == "__main__":
     print("Starte Scraper für EDPB-Dokumente")
     session = requests.Session()

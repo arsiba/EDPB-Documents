@@ -4798,5 +4798,21 @@
   "de_berlin_2018-09_right_to_object_and_to_erasure_decisionpublicen.pdf": {
     "url": null,
     "folder": "article_60"
+  },
+  "edpb_opinion_202525_box_bcr-p.pdf": {
+    "url": "https://www.edpb.europa.eu/system/files/2025-10/edpb_opinion_202525_box_bcr-p.pdf",
+    "folder": "our_documents"
+  },
+  "edpb_opinion_202524_box_bcr-c.pdf": {
+    "url": "https://www.edpb.europa.eu/system/files/2025-10/edpb_opinion_202524_box_bcr-c.pdf",
+    "folder": "our_documents"
+  },
+  "edpb_opinion202523_bcr-c_tessi.pdf": {
+    "url": "https://www.edpb.europa.eu/system/files/2025-10/edpb_opinion202523_bcr-c_tessi.pdf",
+    "folder": "our_documents"
+  },
+  "edpb_letter_20250917_replycciaedpbguidelinesfines_en.pdf": {
+    "url": "https://www.edpb.europa.eu/system/files/2025-09/edpb_letter_20250917_replycciaedpbguidelinesfines_en.pdf",
+    "folder": "our_documents"
   }
 }
