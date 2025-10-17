@@ -7,7 +7,7 @@ URLS = [
      "folder": "our_documents"}
 ]
 
-INDEX_FILE = "../index.json"
+INDEX_FILE = "index.json"
 
 HEADERS = {
     "User-Agent": (
