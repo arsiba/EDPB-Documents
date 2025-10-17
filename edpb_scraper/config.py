@@ -4,7 +4,7 @@ URLS = [
     {"url": BASE_URL + "/our-work-tools/consistency-findings/register-for-article-60-final-decisions_en",
      "folder": "article_60"},
     {"url": BASE_URL + "/our-work-tools/documents/our-documents_en",
-     "folder": "our_documents"}
+     "folder": "general_documents"}
 ]
 
 INDEX_FILE = "index.json"

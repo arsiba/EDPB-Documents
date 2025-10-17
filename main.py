@@ -1,10 +1,12 @@
 import requests
 import time
 import random
+import schedule
 from edpb_scraper.config import INDEX_FILE, HEADERS, URLS
 from edpb_scraper.parser import scrape_page
 import json
 import os
+
 
 def build_or_load_index():
     """Ensure INDEX_FILE exists, scan folders, and build initial index from existing files."""
@@ -64,5 +66,13 @@ def main():
     print("Scraping finished.")
     print(f"Total files in index: {len(downloaded_index)}")
 
+def schedule_job():
+    schedule.every().saturday.at("08:00").do(main)
+    print("Scheduler started. Waiting for Friday 08:00...")
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+
+
 if __name__ == "__main__":
-    main()
+    schedule_job()
